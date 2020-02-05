@@ -1,0 +1,144 @@
+.curtain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #ffe1dc2d;
+  z-index: 50;
+  cursor: default;
+  font-size: 1.3rem;
+}
+
+.info { 
+  background-color: rgba(255, 248, 245, 0.979);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  min-height: 60%;
+  width: 50%;
+  z-index: 51;
+  box-shadow: 1px 1px 3px 0px rgba(88, 28, 28, 0.5);
+  padding: 5px;  
+}
+
+.string-date {
+  text-align: center;
+}
+
+.button.close {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  background-color: rgba(255, 38, 0, 0.808);
+  color: white;
+  font-weight: bold;
+  border-radius: 3px;
+  box-shadow: -1px -1px rgb(167, 53, 53) inset;
+
+}
+
+.button.submit {
+  position: absolute;
+  right: 1%;
+  bottom: 1%;
+  background-color: rgba(255, 38, 0, 0.808);
+  color: white;
+  font-size: 1.07rem;
+  padding: 3px 7px;
+  border-radius: 3px;
+  box-shadow: -1.5px -1.5px rgb(167, 53, 53) inset;
+}
+
+.flex-container {
+  
+  display: flex;  
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px solid rgba(75, 70, 70, 0.096);
+}
+
+.full-event {  
+  padding: 5px;
+}
+
+.buttons {    
+  display: inline-flex;      
+
+}
+
+.edit>img {
+  height: 30px;
+}
+
+.remove>img {
+  height: 35px;
+}
+
+.plus>img {
+  height: 30px;
+  margin: 5px;
+}
+
+@media screen and (max-width: 1200px) {
+  .edit>img {height: 25px; }
+  
+  .remove>img {height: 28px;}
+  
+  .plus>img { 
+    height: 25px;
+    margin: 4px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .edit>img {height: 20px; }
+  
+  .remove>img {height: 22px;}
+  
+  .plus>img { 
+    height: 20px;
+    margin: 3px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .edit>img {height: 13px; }
+  
+  .remove>img {height: 15px;}
+  
+  .plus>img { 
+    height: 13px;
+    margin: 2px;
+  }
+}
+
+.form {  
+  position: absolute;  
+  background-color: rgba(255, 248, 245, 0.979);  
+  z-index: 52;
+  height: 100%;
+  width: 100%;  
+  top: 0;
+  left: 0;  
+}
+
+form {
+  margin: 30px;
+}
+
+input {
+  width: 75%;
+  font-size: 1.07rem;
+}
+
+.input-time {  
+  width: auto;
+}
+
+.form .flex-container {
+  border: none;
+}

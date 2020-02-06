@@ -5,11 +5,16 @@ const url = 'https://calendar-planner-528e9.firebaseio.com';
 
 export const FirebaseState = ({children}) => {
   
-  const [events, setEvents] = useState('empt');
+  const [events, setEvents] = useState({});
 
   const fetchEvents = async () => {
 
-    let res = await fetch(`${url}/.json`).then(resolve => resolve.json());    
+    let res = {};
+
+    res = await fetch(`${url}/.json`)
+      .then(resolve => resolve.json())
+      .catch(err => alert('Не удалось загрузить события.'));  
+
     setEvents(res); 
   }  
   
@@ -43,13 +48,15 @@ export const FirebaseState = ({children}) => {
     .catch(err => {
       throw err
     });
-}
-
+  }
 
   const removeEvent = async (id, date) => {
     await fetch(`${url}/${+date}/${id}.json`, {
-      method: 'DELETE'});
-      fetchEvents();
+      method: 'DELETE'})
+      .then(() => {
+        fetchEvents();
+      })  
+      .catch(err => alert('Ошибка сервера: не удалось удалить событие'));      
   }
 
   return (

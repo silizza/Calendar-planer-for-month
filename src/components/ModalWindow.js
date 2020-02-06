@@ -41,55 +41,54 @@ function ModalWindow({modal, close, dayEvents}) {
   const fullEvents = dayEvents
     ? dayEvents.map(event => {
         return (
-          
           <div key={event.id} className="flex-container">
             <span className="full-event">
-              <span style={{fontWeight:"bold"}}>{event.title}. </span> 
-              {event.details} 
-              <span style={{fontWeight:"bold", color: "red"}}> {event.time}</span>
+              <span style={{ fontWeight: "bold" }}>{event.title}. </span>
+              {event.details}
+              <span style={{ fontWeight: "bold", color: "red" }}>
+                {" "}
+                {event.time}
+              </span>
             </span>
+
             <div className="buttons">
-            <button
-              className="button edit"
-              onClick={() => openForm({
-                  ...event,
-                  action: "editEvent",                  
-                  id: event.id
-                })
-              }
-            >
-              <img src={edit} alt="Ред" title="Редактировать"/>
-            </button>
-            <button className="button remove" onClick={() => remove(event.id)}>
-              <img src={rubbish} alt="Удал" title="Удалить"/>
-            </button>            
-            </div>           
+              <button
+                className="button edit"
+                onClick={() => openForm({
+                    ...event,
+                    action: "editEvent",
+                    id: event.id })}
+              >
+                <img src={edit} alt="Ред" title="Редактировать" />
+              </button>
+              <button
+                className="button remove"
+                onClick={() => remove(event.id)}
+              >
+                <img src={rubbish} alt="Удал" title="Удалить" />
+              </button>
+            </div>
           </div>
-          
-          
         );
       })
     : null;
 
-    
-
   return (
     <div className="curtain">
       <div className="info">
-        {formVisible && <Form form={formState} close={closeForm}/>}
+        {formVisible && <Form form={formState} close={closeForm} />}
         <h2 className="string-date">{modal.dateString}</h2>
-        
         <br />
+
         {fullEvents}
+        
         <button
           className="button plus"
-          onClick={() =>
-            openForm({ ...formState, action: "addNewNote" })
-          }
+          onClick={() => openForm({ ...formState, action: "addNewNote" })}
         >
           <img src={plus} alt="+" title="Добавить новое событие" />
         </button>
-        <button className="modal button close" onClick={(e) => close(e)}>
+        <button className="modal button close" onClick={e => close(e)}>
           &times;
         </button>
       </div>
